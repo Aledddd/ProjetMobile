@@ -17,10 +17,14 @@
     </fragment>
     <fragment
         android:id="@+id/CarDetailFragment"
-        android:name="com.example.projetmobile1.SecondFragment"
+        android:name="com.example.projetmobile1.details.CarDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        tools:layout="@layout/fragment_car_details">
+        <argument
+            android:name="carId"
+            app:argType="integer"
+            android:defaultValue="-1"
+            />
         <action
             android:id="@+id/NavigateToCarListFragment"
             app:destination="@id/CarsFragment" />

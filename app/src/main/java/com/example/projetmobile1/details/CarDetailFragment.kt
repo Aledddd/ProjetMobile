@@ -1,17 +1,20 @@
-package com.example.projetmobile1
+package com.example.projetmobile1.details
 
+import android.content.Intent.getIntent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.projetmobile1.R
+import com.example.projetmobile1.list.CarsAdapter
+import com.example.projetmobile1.presentation.api.CarsResponse
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class SecondFragment : Fragment() {
+
+class CarDetailFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -19,7 +22,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        return inflater.inflate(R.layout.fragment_car_details, container, false)
 
     }
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,10 +18,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class CarsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -58,7 +55,7 @@ class CarsFragment : Fragment() {
         carsApi.getCars().enqueue(object : Callback<List<CarsResponse>> {
 
             override fun onResponse(call: Call<List<CarsResponse>>, response: Response<List<CarsResponse>>) {
-                if(response.isSuccessful &&response.body()!=null){
+                if(response.isSuccessful && response.body()!=null){
                     val carsResponse: List<CarsResponse> = response.body()!!
                     adapter.updateList(carsResponse)
                 }
@@ -69,6 +66,13 @@ class CarsFragment : Fragment() {
         })
     }
     private fun onClickedCar(carsResponse: CarsResponse) {
-        findNavController().navigate(R.id.NavigateToCarDetailFragment)
+        findNavController().navigate(R.id.NavigateToCarDetailFragment, bundleOf(
+                "CarId" to carsResponse.id,
+                "CarModel" to carsResponse.model,
+                "CarPrice" to carsResponse.price,
+                "CarMake" to carsResponse.make,
+                "CarHorsePower" to carsResponse.horsepower,
+                "CarImage" to carsResponse.img_url
+            ))
     }
 }

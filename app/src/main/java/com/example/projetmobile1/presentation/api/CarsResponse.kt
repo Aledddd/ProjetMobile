@@ -7,5 +7,5 @@ data class CarsResponse(
     val make: String,
     val model: String,
     val price: Int,
-    val image: String
+    val img_url: String
 )
