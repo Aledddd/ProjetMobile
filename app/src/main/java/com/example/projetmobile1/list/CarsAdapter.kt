@@ -2,6 +2,8 @@ package com.example.projetmobile1.list
 
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.transition.Transition
 import android.view.LayoutInflater
 import android.view.View
@@ -26,14 +28,10 @@ class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener:
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView_list: TextView
         val circleImageView_list: CircleImageView
-       // val textView_details: TextView
-       // val circleImageView_details: CircleImageView
         init {
             // Define click listener for the ViewHolder's View.
             textView_list = view.findViewById(R.id.voiture)
-            //textView_details = view.findViewById(R.id.car_details)
             circleImageView_list = view.findViewById(R.id.car_img)
-            //circleImageView_details = itemView.findViewById(R.id.car_details_img)
         }
     }
 
@@ -50,7 +48,7 @@ class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener:
     }
 
     // Replace the contents of a view (invoked by the layout manager)
-    @SuppressLint("SetTextI18n", "CheckResult")
+    @SuppressLint("SetTextI18n", "CheckResult", "ResourceType")
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         // Get element from your dataset at this position and replace the
@@ -64,6 +62,7 @@ class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener:
                 .with(viewHolder.itemView.context)
                 .load(cars.img_url)
                 .centerCrop()
+                .placeholder(ColorDrawable(Color.LTGRAY))
                 .into(viewHolder.circleImageView_list)
     }
 

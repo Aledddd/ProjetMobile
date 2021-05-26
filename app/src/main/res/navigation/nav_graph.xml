@@ -20,11 +20,36 @@
         android:name="com.example.projetmobile1.details.CarDetailFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_car_details">
+
         <argument
-            android:name="carId"
+            android:name="CarId"
             app:argType="integer"
-            android:defaultValue="-1"
-            />
+            android:defaultValue="0" />
+        <argument
+            android:name="CarModel"
+            app:argType="string"
+            android:defaultValue="0L" />
+        <argument
+            android:name="CarPrice"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="CarMake"
+            app:argType="string"
+            android:defaultValue="0L" />
+        <argument
+            android:name="CarModel"
+            app:argType="string"
+            android:defaultValue="0L" />
+        <argument
+            android:name="CarHorsePower"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="CarImage"
+            app:argType="string"
+            android:defaultValue="0L" />
+
         <action
             android:id="@+id/NavigateToCarListFragment"
             app:destination="@id/CarsFragment" />

@@ -4,28 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightblue"
     tools:context=".details.CarDetailFragment">
 
 
     <TextView
-        android:id="@+id/car_details"
+        android:id="@+id/car_detail1"
         android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:text="coucou"
+        android:layout_height="40dp"
+        tools:text="Citroen"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.153" />
+
+
+    <TextView
+        android:id="@+id/car_detail2"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_detail1"
+        tools:text="Citroen" />
+
+
+    <TextView
+        android:id="@+id/car_detail3"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_detail2"
+        tools:text="Citroen" />
+
+
+    <TextView
+        android:id="@+id/car_detail4"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_detail3"
+        tools:text="Citroen" />
+
+
+    <TextView
+        android:id="@+id/car_detail5"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_detail4"
+        tools:text="Citroen" />
+
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/car_details_img"
         android:layout_width="120dp"
         android:layout_height="95dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="160dp"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/previous"
-        app:layout_constraintTop_toBottomOf="@+id/car_details"
+        app:layout_constraintTop_toBottomOf="@id/car_detail1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
