@@ -1,6 +1,8 @@
 package com.example.projetmobile1.details
 
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,11 +11,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.projetmobile1.R
+import de.hdodenhof.circleimageview.CircleImageView
 
 
 class CarDetailFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +48,8 @@ class CarDetailFragment : Fragment() {
         detail3.text = "Model : ${model?.uppercase()}"
         detail4.text = "HorsePower : "+horsepower.toString()
         detail5.text = "Price : "+price.toString()+" $"
+
+        val image = arguments?.getString("CarImage")
 
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
             findNavController().navigate(R.id.NavigateToCarListFragment)

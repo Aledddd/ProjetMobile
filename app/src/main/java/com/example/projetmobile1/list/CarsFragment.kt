@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetmobile1.R
+import com.example.projetmobile1.Singleton
 import com.example.projetmobile1.presentation.api.CarsApi
 import com.example.projetmobile1.presentation.api.CarsResponse
 import retrofit2.Call
@@ -22,8 +23,6 @@ class CarsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private val adapter = CarsAdapter(listOf(),::onClickedCar)
-
-
     private val layout = LinearLayoutManager(context)
 
     override fun onCreateView(
@@ -45,14 +44,7 @@ class CarsFragment : Fragment() {
         recyclerView.adapter = adapter
 
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://private-anon-a858ac5986-carsapi1.apiary-mock.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val carsApi: CarsApi = retrofit.create(CarsApi::class.java)
-
-        carsApi.getCars().enqueue(object : Callback<List<CarsResponse>> {
+        Singleton.carsApi.getCars().enqueue(object : Callback<List<CarsResponse>> {
 
             override fun onResponse(call: Call<List<CarsResponse>>, response: Response<List<CarsResponse>>) {
                 if(response.isSuccessful && response.body()!=null){

@@ -1,10 +1,9 @@
 package com.example.projetmobile1.list
 
 import android.annotation.SuppressLint
-import android.graphics.BitmapFactory
+
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.transition.Transition
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.example.projetmobile1.R
 import com.example.projetmobile1.presentation.api.CarsResponse
 import de.hdodenhof.circleimageview.CircleImageView
-import java.net.URL
 
 
 class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener: ((CarsResponse)->Unit)? = null) :
@@ -26,12 +24,12 @@ class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener:
      * (custom ViewHolder).
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView_list: TextView
-        val circleImageView_list: CircleImageView
+        val textView: TextView
+        val circleImageView: CircleImageView
         init {
             // Define click listener for the ViewHolder's View.
-            textView_list = view.findViewById(R.id.voiture)
-            circleImageView_list = view.findViewById(R.id.car_img)
+            textView = view.findViewById(R.id.voiture)
+            circleImageView = view.findViewById(R.id.car_img)
         }
     }
 
@@ -54,7 +52,7 @@ class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener:
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         val cars : CarsResponse = dataSet[position]
-        viewHolder.textView_list.text = cars.make +"   "+cars.model
+        viewHolder.textView.text = cars.make +"   "+cars.model
         viewHolder.itemView.setOnClickListener {
             listener?.invoke(cars)
         }
@@ -63,7 +61,7 @@ class CarsAdapter(private var dataSet: List<CarsResponse>, private var listener:
                 .load(cars.img_url)
                 .centerCrop()
                 .placeholder(ColorDrawable(Color.LTGRAY))
-                .into(viewHolder.circleImageView_list)
+                .into(viewHolder.circleImageView)
     }
 
     // Return the size of your dataset (invoked by the layout manager)
