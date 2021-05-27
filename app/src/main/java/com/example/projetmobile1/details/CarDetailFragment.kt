@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -38,7 +39,7 @@ class CarDetailFragment : Fragment() {
         val detail3: TextView = view.findViewById(R.id.car_detail3)
         val detail4: TextView = view.findViewById(R.id.car_detail4)
         val detail5: TextView = view.findViewById(R.id.car_detail5)
-        val car_img: CircleImageView = view.findViewById(R.id.car_details_img)
+        val CarImage: ImageView = view.findViewById(R.id.car_details_img)
 
         val id = arguments?.getInt("CarId")
         val make = arguments?.getString("CarMake")
@@ -52,7 +53,11 @@ class CarDetailFragment : Fragment() {
         detail5.text = "Price : "+price.toString()+" $"
 
         val image = arguments?.getString("CarImage")
-        Picasso.with(context).load(image).placeholder(ColorDrawable(Color.LTGRAY)).into(car_img)
+        Picasso
+            .with(context)
+            .load(image)
+            .placeholder(ColorDrawable(Color.LTGRAY))
+            .into(CarImage)
 
 
 

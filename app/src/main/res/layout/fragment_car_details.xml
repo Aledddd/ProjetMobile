@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightblue"
     tools:context=".details.CarDetailFragment">
 
 
@@ -70,10 +69,10 @@
         tools:text="Citroen" />
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/car_details_img"
-        android:layout_width="120dp"
-        android:layout_height="95dp"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="160dp"
         android:src="@mipmap/ic_launcher"
@@ -81,15 +80,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_editor_absoluteY="150dp" />
 
+
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/button_collecton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:text="@string/ajouter_la_collection"
         app:layout_constraintTop_toBottomOf="@id/car_detail1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/button_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/previous"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_collecton"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

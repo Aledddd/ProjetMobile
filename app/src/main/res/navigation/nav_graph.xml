@@ -13,7 +13,8 @@
 
         <action
             android:id="@+id/NavigateToCarDetailFragment"
-            app:destination="@id/CarDetailFragment" />
+            app:destination="@id/CarDetailFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/CarDetailFragment"
@@ -52,6 +53,7 @@
 
         <action
             android:id="@+id/NavigateToCarListFragment"
-            app:destination="@id/CarsFragment" />
+            app:destination="@id/CarsFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>
