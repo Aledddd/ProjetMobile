@@ -1,6 +1,5 @@
-package com.example.projetmobile1.details
+package com.example.projetmobile1.presentation.details
 
-import android.accounts.AccountManager.get
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -15,7 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.projetmobile1.R
 import com.squareup.picasso.Picasso
-import de.hdodenhof.circleimageview.CircleImageView
 
 
 class CarDetailFragment : Fragment() {
@@ -39,7 +37,7 @@ class CarDetailFragment : Fragment() {
         val detail3: TextView = view.findViewById(R.id.car_detail3)
         val detail4: TextView = view.findViewById(R.id.car_detail4)
         val detail5: TextView = view.findViewById(R.id.car_detail5)
-        val CarImage: ImageView = view.findViewById(R.id.car_details_img)
+        val carImage: ImageView = view.findViewById(R.id.car_details_img)
 
         val id = arguments?.getInt("CarId")
         val make = arguments?.getString("CarMake")
@@ -57,7 +55,7 @@ class CarDetailFragment : Fragment() {
             .with(context)
             .load(image)
             .placeholder(ColorDrawable(Color.LTGRAY))
-            .into(CarImage)
+            .into(carImage)
 
 
 

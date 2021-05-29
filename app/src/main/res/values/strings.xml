@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Application d Alan ABDOU</string>
+    <string name="app_name">Alan ABDOU</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">Cars List</string>
@@ -9,6 +9,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="coucou">coucou</string>
     <string name="ajouter_la_collection">Ajouter à la collection</string>
+    <string name="retour">retour</string>
+    <string name="revenir_la_liste">revenir à la liste</string>
+    <string name="image">image</string>
+    <string name="search">search</string>
 </resources>
