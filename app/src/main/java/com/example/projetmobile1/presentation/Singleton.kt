@@ -10,16 +10,15 @@ import java.io.File
 
 class Singleton {
     companion object{
-        private var cache = Cache(File(context?.cacheDir,"responses"),10 * 1024 * 1024)
+       /* private var cache = Cache(File(context?.cacheDir,"responses"),10 * 1024 * 1024)
 
         private var okHttpClient: OkHttpClient = OkHttpClient().newBuilder()
             .cache(cache)
-            .build()
+            .build()*/
 
         val carsApi: CarsApi = Retrofit.Builder()
                 .baseUrl("https://private-anon-a858ac5986-carsapi1.apiary-mock.com/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
                 .build()
                 .create(CarsApi::class.java)
         }
