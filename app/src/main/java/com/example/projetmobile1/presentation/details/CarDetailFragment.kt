@@ -27,7 +27,6 @@ class CarDetailFragment : Fragment() {
 
     }
 
-
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
