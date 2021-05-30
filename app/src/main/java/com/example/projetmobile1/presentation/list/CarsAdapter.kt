@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.projetmobile1.R
-import com.example.projetmobile1.presentation.api.CarsResponse
 import de.hdodenhof.circleimageview.CircleImageView
 
 

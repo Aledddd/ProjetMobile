@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetmobile1.R
 import com.example.projetmobile1.presentation.Singleton
-import com.example.projetmobile1.presentation.api.CarsResponse
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import retrofit2.Call
@@ -82,13 +81,6 @@ class CarsFragment : Fragment() {
             putString(key, jsonFavorites)
             apply()
         }
-        /*val editor: SharedPreferences.Editor? = sharedPref?.edit()
-        val gson = Gson()
-        val jsonFavorites = gson.toJson(carsResponse)
-
-        editor?.putString(key, jsonFavorites)
-
-        editor?.apply()*/
     }
 
     private fun callApi() {

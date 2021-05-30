@@ -57,7 +57,6 @@ class CarDetailFragment : Fragment() {
             .into(carImage)
 
 
-
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
             findNavController().navigate(R.id.NavigateToCarListFragment)
         }
